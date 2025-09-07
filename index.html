@@ -14,7 +14,6 @@
             document.getElementById('topbartitle').innerText = thisTitle;
         });
         </script>
-        </div>
         <div class="container">
             <h2>References:</h2>
             <ul>
@@ -26,11 +25,19 @@
                 Code Projects:
             </h2>
             <ul>
-                <li><a href=https://github.com/liamhmusic125/liamhmusic_website>Personal Website</a></li>
+                <li><a href="https://github.com/liamhmusic125/liamhmusic_website">Personal Website</a></li>
+                <script>
+                    function requestUser(){
+                        let user = prompt("Enter a username:");
+                        let pass = prompt("Enter a password:");
+                        fetch("https://mywebsite-api-cv9f.onrender.com/GetUser?username=" + user + "&password="+pass).then(response => response.json()).then(data => {
+                            alert(data.login_success);
+                        });
+                    }
+                </script>
+                <li><button onclick="requestUser()">Click here</button></li>
             </ul>
         </div>
         </div>
-        </div>
-    </div>
     </body>
 </html>
