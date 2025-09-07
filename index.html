@@ -30,8 +30,17 @@
                     function requestUser(){
                         let user = prompt("Enter a username:");
                         let pass = prompt("Enter a password:");
-                        fetch("https://mywebsite-api-cv9f.onrender.com/GetUser?username=" + user + "&password="+pass).then(response => response.json()).then(data => {
-                            alert(data.login_success);
+                        fetch("https://mywebsite-api-cv9f.onrender.com/GetUser",{
+                            method: 'POST',
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                username: user,
+                                password: pass
+                            })
+                        }).then(response => response.json()).then(data => {
+                            alert(data.login_success == "YES" ? `Welcome, ${user}!` : "Login Failed.");
                         });
                     }
                 </script>
