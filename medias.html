@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel='stylesheet' href="styles.css">
         <title>
             Profiles
         </title>
     </head>
     <body>
-        <h1>My Profiles</h1>
+        <div id="topbar"></div>
+        <script>
+        let thisTitle = "My Profiles";
+        fetch('topbar.html')
+        .then(response => response.text()).then(data => {
+            document.getElementById('topbar').innerHTML = data;
+            document.getElementById('topbartitle').innerText = thisTitle;
+        });
+        </script>
+        <div class="container">
+        <div class="columns">
+        <div>
+        <h2>Social Media</h2>
+        <ul>
+        <li>
         <a href="https://www.instagram.com/liamhmusic125/">
             Instagram
         </a>
+        </li>
+        </ul>
+        </div>
+        <div>
+            <h2>Professional</h2>
+            <ul>
+                <li>
+                    <a href="https://github.com/liamhmusic125">Github</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+        </div>
     </body>
 </html>

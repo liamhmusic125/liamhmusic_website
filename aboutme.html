@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href="styles.css">
+        <title>About Me</title>
+    </head>
+    <body>
+        <div id="topbar"></div>
+        <script>
+        let thisTitle = "About Me";
+        fetch('topbar.html')
+        .then(response => response.text()).then(data => {
+            document.getElementById('topbar').innerHTML = data;
+            document.getElementById('topbartitle').innerText = thisTitle;
+        });
+        </script>
+        <div class="container">
+        <p>
+            Hello! My name is Liam Hall, and I am a musician, runner, and programmer. I am currently a sophomore attending Wilson Memorial High School.
+        </p>
+        </div>
+    </body>

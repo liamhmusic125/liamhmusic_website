@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel='stylesheet' href="styles.css">
         <title>Liamhmusic125</title>
     </head>
     <body>
-        <a href="medias.html">
-            My Profiles
-        </a>
+        <div id="topbar"></div>
+        <script>
+        let thisTitle = "Liam Hall";
+        fetch('topbar.html')
+        .then(response => response.text()).then(data => {
+            document.getElementById('topbar').innerHTML = data;
+            document.getElementById('topbartitle').innerText = thisTitle;
+        });
+        </script>
+        </div>
+        <div class="container">
+            <h2>References:</h2>
+            <ul>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="medias.html">My Profiles</a></li>
+            </ul>
+        <div>
+            <h2>
+                Code Projects:
+            </h2>
+            <ul>
+                <li><a href=https://github.com/liamhmusic125/liamhmusic_website>Personal Website</a></li>
+            </ul>
+        </div>
+        </div>
+        </div>
+    </div>
     </body>
 </html>
