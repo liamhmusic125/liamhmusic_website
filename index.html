@@ -15,38 +15,6 @@
         });
         </script>
         <div class="container">
-            <h2>References:</h2>
-            <ul>
-            <li><a href="aboutme.html">About Me</a></li>
-            <li><a href="medias.html">My Profiles</a></li>
-            </ul>
-        <div>
-            <h2>
-                Code Projects:
-            </h2>
-            <ul>
-                <li><a href="https://github.com/liamhmusic125/liamhmusic_website">Personal Website</a></li>
-                <script>
-                    function requestUser(){
-                        let user = prompt("Enter a username:");
-                        let pass = prompt("Enter a password:");
-                        fetch("https://mywebsite-api-cv9f.onrender.com/GetUser",{
-                            method: 'POST',
-                            headers: {
-                                "Content-Type": "application/json",
-                            },
-                            body: JSON.stringify({
-                                username: user,
-                                password: pass
-                            })
-                        }).then(response => response.json()).then(data => {
-                            alert(data.login_success == "YES" ? `Welcome, ${user}!` : "Login Failed.");
-                        });
-                    }
-                </script>
-                <li><button onclick="requestUser()">Click here</button></li>
-            </ul>
-        </div>
         </div>
     </body>
 </html>
